@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 
-app.get('/', (req, res) => {
-  res.send('Home Page')
-});
+// Load Routes
+const todoRoutes = require('./routes/api/todos');
+
+
+// Use Routes
+app.use('/api/todos', todoRoutes);
 
 const port = process.env.PORT || 5000;
 
