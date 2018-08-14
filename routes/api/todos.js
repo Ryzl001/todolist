@@ -42,5 +42,14 @@ router.put('/:todoId', (req, res) => {
     .catch(err => res.send(err))
 });
 
+// @route   DELETE api/todos/:todoId
+// @desc    Remove
+// @access  Public
+router.delete('/:todoId', (req, res) => {
+  db.Todo.remove({ _id: req.params.todoId })
+    .then(() => res.json({ message: 'We deleted it!' }))
+    .catch(err => res.send(err))
+});
+
 
 module.exports = router;
