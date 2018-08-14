@@ -6,5 +6,4 @@ mongoose.Promise = Promise; // pozwala na używanie syntaksu z promise
 
 
 
-
 module.exports.Todo = require('./Todo');

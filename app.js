@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // Load Routes
 const todoRoutes = require('./routes/api/todos');
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use Routes
 app.use('/api/todos', todoRoutes);
