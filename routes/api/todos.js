@@ -31,5 +31,16 @@ router.get('/:todoId', (req, res) => {
     .catch(err => res.send(err))
 });
 
+// @route   PUT api/todos/:todoId
+// @desc    UPDATE
+// @access  Public
+router.put('/:todoId', (req, res) => {
+  db.Todo.findOneAndUpdate({ _id: req.params.todoId }, req.body, { new: true })  // new: true zwraca nową wartość po update
+    .then(todo => {
+      res.json(todo)
+    })
+    .catch(err => res.send(err))
+});
+
 
 module.exports = router;
