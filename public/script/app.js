@@ -9,6 +9,9 @@ const addTodos = (todos) => {
   todos.forEach(todo => {
     const newTodo = $('<li class="task">' + todo.name + '</li>');  // class można dodać w ten sposób lub  newTodo.addClass('task')
     // newTodo.addClass('task')
+    if(todo.completed) { // musimy się odnosić do todo które jest częscią danych w bazie danych
+      newTodo.addClass('done')
+    }
     $('.list').append(newTodo)
   })
 }
