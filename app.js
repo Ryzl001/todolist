@@ -9,6 +9,13 @@ const todoRoutes = require('./routes/api/todos');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
+
+
+app.get('/', (req, res) => {
+  res.sendfile('index.html')
+});
 
 // Use Routes
 app.use('/api/todos', todoRoutes);
