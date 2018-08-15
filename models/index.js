@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.set('debug', true);
+mongoose.set('debug', true); // pokazuje w konsoli co zostało wykonane
+
 
 // Load Keys
 const keys = require('../config/keys');
